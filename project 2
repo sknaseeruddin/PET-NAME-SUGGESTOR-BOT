@@ -1,0 +1,18 @@
+import random
+dog_names=["Bruno","Max","Daisy","Buddy","Rocky","Bella"]
+cat_names=["Luna","Kitty","Simba","Milo","Nala","Chloe"]
+rabbit_names=["Fluffy","Thumper","Snowy","Bunny","Cocoa","Cotton"]
+bird_names=["Sky","Tweety","Coco","Sunny","Peanut","Kiwi"]
+pet_names={"dog":dog_names,"cat":cat_names,"rabbit":rabbit_names,"bird":bird_names}
+print("🐾 Welcome to the Pet Name Suggester Bot! 🐾")
+while True:
+    pet_type=input("\nWhat type of pet do you have? (Dog/Cat/Rabbit/Bird): ").strip().lower()
+    if pet_type not in pet_names:
+        print("Oops! We don't have names for that pet. Please enter Dog, Cat, Rabbit, or Bird.")
+        continue
+    suggested_name=random.choice(pet_names[pet_type])
+    print(f"Here's a cute name suggestion for your {pet_type.capitalize()}: 🐶 {suggested_name}")
+    another=input("\nDo you want another name suggestion? (Yes/No): ").strip().lower()
+    if another!="yes":
+        print("\nThanks for using the Pet Name Suggester Bot! 🐾 Have fun with your new friend!")
+        break
